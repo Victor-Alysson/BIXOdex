@@ -11,7 +11,7 @@ import m8img from './assets/velvus.jpg';
 import m9img from './assets/SONOnic.jpg';
 import m10img from './assets/wr.jpg';
 import m11img from './assets/pet-pembas.jpg';
-import m12img from './assets/empacotadus.jpg';
+import m12img from './assets/emp.jpg';
 
 export const monstersData = [
   {
