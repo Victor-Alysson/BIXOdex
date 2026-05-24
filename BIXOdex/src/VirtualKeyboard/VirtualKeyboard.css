@@ -1,0 +1,78 @@
+/* VirtualKeyboard.css */
+
+.keyboard-container {
+  /* Fundo da área do teclado (um castanho ligeiramente mais claro) */
+  background-color: #4a3633;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  
+  /* Sombra interna para separar da carcaça principal */
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Grelha principal para as letras de A a Y */
+.keys-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colunas de tamanho igual */
+  gap: 12px;
+}
+
+/* Estilo base para todos os botões */
+.key-btn {
+  background-color: #6d829e; /* Azul acinzentado do design */
+  color: #0c1627; /* Cor do texto (azul muito escuro) */
+  border: none;
+  border-radius: 8px;
+  padding: 18px 0;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: sans-serif;
+  cursor: pointer;
+  transition: transform 0.1s, filter 0.1s;
+  
+  /* Sombra para dar a sensação de um botão físico que pode ser premido */
+  box-shadow: 0 4px 0 #4a5c73;
+}
+
+/* Efeito ao clicar no botão (ele "afunda") */
+.key-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #4a5c73;
+}
+
+/* Linha inferior (Z e botões de ação) */
+.bottom-row {
+  display: flex;
+  gap: 12px;
+}
+
+/* O Z e a seta precisam de ter a mesma largura que os botões de cima */
+.bottom-row .key-btn.fixed-width {
+  flex: 1; /* Ocupam 1 "fatia" do espaço flexível */
+}
+
+/* Os botões Limpar e Buscar são mais largos */
+.bottom-row .key-btn.wide {
+  flex: 2; /* Ocupam 2 "fatias", ficando mais largos */
+  color: white; /* O texto destes botões é branco no seu design */
+}
+
+/* Cores específicas dos botões de ação */
+.btn-backspace {
+  background-color: #f25c05;
+  box-shadow: 0 4px 0 #b34303;
+  color: white;
+}
+
+.btn-clear {
+  background-color: #e60012;
+  box-shadow: 0 4px 0 #99000c;
+}
+
+.btn-search {
+  background-color: #00c74b;
+  box-shadow: 0 4px 0 #008f36;
+}

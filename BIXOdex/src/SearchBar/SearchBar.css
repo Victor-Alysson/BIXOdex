@@ -1,0 +1,44 @@
+/* SearchBar.css */
+
+.search-bar-container {
+  /* Fundo ligeiramente mais escuro que a carcaça */
+  background-color: #271f1e; 
+  border-radius: 12px;
+  padding: 0 16px;
+  height: 60px;
+  
+  /* Flexbox para alinhar o ícone e o texto lado a lado */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  /* Sombra interna leve para parecer "afundado" */
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-icon {
+  color: #6b7a8f; /* Cor azul-acinzentada do ícone */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: #a0aab8; /* Cor do texto digitado */
+  font-size: 16px;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+/* Remove a borda azul feia que os navegadores colocam ao clicar */
+.search-input:focus {
+  outline: none;
+}
+
+/* Estiliza o texto de placeholder */
+.search-input::placeholder {
+  color: #6b7a8f;
+}

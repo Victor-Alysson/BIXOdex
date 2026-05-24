@@ -1,0 +1,57 @@
+/* PokepadShell.css */
+
+.pokepad-shell {
+  /* Cores baseadas no seu design (castanho escuro) */
+  background-color: #5c190f; 
+  
+  /* Formato e tamanho */
+  border-radius: 24px;
+  padding: 32px;
+  width: 100%;
+  max-width: 650px;
+  min-height: 850px;
+  
+  /* Sombras para dar efeito 3D ao aparelho físico */
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.5), 
+    inset 0 0 15px rgba(0, 0, 0, 0.4);
+  
+  /* Organização interna (Flexbox) */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  
+  /* Centralizar o Pokepad na página principal */
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------
+   ESTILOS TEMPORÁRIOS PARA OS ESPAÇOS RESERVADOS
+   (Pode apagar isto depois de criarmos os componentes)
+--------------------------------------------------- */
+.placeholder {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.screen-placeholder {
+  height: 320px;
+}
+
+.search-placeholder {
+  height: 60px;
+}
+
+.keyboard-placeholder {
+  height: 350px;
+  flex-grow: 1;
+}

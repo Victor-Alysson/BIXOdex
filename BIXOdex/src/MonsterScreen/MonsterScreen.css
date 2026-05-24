@@ -1,0 +1,65 @@
+/* MonsterScreen.css */
+
+.monster-screen {
+  /* Fundo verde muito escuro, quase preto, e borda néon */
+  background-color: #051409;
+  border: 3px solid #00e64d;
+  border-radius: 16px;
+  padding: 20px;
+  
+  /* Layout Flexbox para imagem à esquerda e textos à direita */
+  display: flex;
+  gap: 24px;
+  height: 320px; /* Mantém a altura que definimos no placeholder */
+  box-sizing: border-box;
+
+  /* Sombra interna para dar efeito de ecrã afundado */
+  box-shadow: inset 0 0 30px rgba(0, 230, 77, 0.15), 0 0 10px rgba(0, 230, 77, 0.2);
+}
+
+/* Área da imagem (quadrado preto) */
+.monster-image-container {
+  background-color: #000000;
+  border: 2px solid #004d1a;
+  border-radius: 8px;
+  width: 250px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Área de informações (textos) */
+.monster-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  color: #00e64d; /* Verde néon */
+  font-family: 'Courier New', Courier, monospace; /* Fonte estilo terminal */
+  text-shadow: 0 0 4px rgba(0, 230, 77, 0.6); /* Brilho no texto */
+}
+
+.monster-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+  letter-spacing: 2px;
+}
+
+.monster-stat {
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Empurra os atributos (HP, ATK, DEF) para o fundo do ecrã */
+.stats-bottom {
+  margin-top: auto;
+  border-top: 1px dashed rgba(0, 230, 77, 0.3);
+  padding-top: 12px;
+}
+
+.stats-bottom .monster-stat {
+  font-size: 14px;
+}
