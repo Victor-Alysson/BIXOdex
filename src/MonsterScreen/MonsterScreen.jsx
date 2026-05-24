@@ -7,7 +7,7 @@ const MonsterScreen = ({ monster, allMonsters, onSelectMonster }) => {
   if (!monster) {
     return (
       <div className="monster-screen column-layout">
-        <h3 className="screen-error-title">SISTEMA: CRIATURA NÃO ENCONTRADA</h3>
+        <h3 className="screen-error-title">SISTEMA: BIXO-DEX PLUS PRO MAX</h3>
         <p className="screen-error-subtitle">SELECIONE UM MODELO DISPONÍVEL:</p>
         
         {/* Lista de monstros do banco de dados */}
