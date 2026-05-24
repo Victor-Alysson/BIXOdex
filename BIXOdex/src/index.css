@@ -1,5 +1,7 @@
 body {
-    background-color: hsl(0, 0%, 20%);
+    background-image: url('./assets/background.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;

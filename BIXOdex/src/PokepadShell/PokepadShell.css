@@ -2,12 +2,12 @@
 
 .pokepad-shell {
   /* Cores baseadas no seu design (castanho escuro) */
-  background-color: #5c190f; 
+  background-color: #494949; 
   
   /* Formato e tamanho */
   border-radius: 24px;
   padding: 32px;
-  width: 100%;
+  width: 600px;
   max-width: 650px;
   min-height: 850px;
   

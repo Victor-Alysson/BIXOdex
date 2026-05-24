@@ -1,25 +1,52 @@
 // PokepadShell.jsx
 import React, { useState, useEffect } from 'react';
 import './PokepadShell.css';
+
 import MonsterScreen from '../MonsterScreen/MonsterScreen';
 import SearchBar from '../SearchBar/SearchBar';
 import VirtualKeyboard from '../VirtualKeyboard/VirtualKeyboard';
 
+import { monstersData } from '../monstersData';
+
 const PokepadShell = () => {
   const [searchText, setSearchText] = useState('');
   const [activeKey, setActiveKey] = useState('');
+  const [currentMonster, setCurrentMonster] = useState(null);
 
   const handleKeyPress = (key) => {
+    
+    // 1. SE FOR O BOTÃO LIMPAR
     if (key === 'LIMPAR') {
       setSearchText('');
-    } else if (key === '←') {
+      setCurrentMonster(null);
+    } 
+    
+    // 2. SE FOR O BOTÃO APAGAR (SETA)
+    else if (key === '←') {
       setSearchText((prev) => prev.slice(0, -1));
-    } else if (key === 'BUSCAR') {
-      setSearchText((atual) => {
-        alert(`A buscar o monstro: ${atual}`);
-        return atual; // Não altera o texto, apenas lê o valor dele
+    } 
+    
+    // 3. SE FOR O BOTÃO BUSCAR
+    else if (key === 'BUSCAR') {
+      setSearchText((textoNaTela) => {
+        const termoBusca = textoNaTela.trim();
+        
+        const encontrado = monstersData.find(
+          (m) => m.name === termoBusca
+        );
+
+        if (encontrado) {
+          setCurrentMonster(encontrado); // Se achou, bota o monstro na tela
+        } else {
+          setCurrentMonster(null); // Se errou, abre a lista de sugestões
+        }
+        
+        return textoNaTela; // Não mexe no texto digitado
       });
-    } else {
+    } 
+    
+    // 4. SE FOR UMA LETRA OU ESPAÇO
+    else {
       setSearchText((prev) => prev + key);
     }
   };
@@ -43,6 +70,20 @@ const PokepadShell = () => {
         else if (key === 'Enter') handleKeyPress('BUSCAR');
         else if (key === 'Delete') handleKeyPress('LIMPAR');
         else handleKeyPress(upperKey);
+
+       setSearchText((atual) => {
+        const encontrado = monstersData.find(
+          (m) => m.name === atual.trim()
+        );
+
+        if (encontrado) {
+          setCurrentMonster(encontrado); // Ativa o monstro encontrado
+        } else {
+          setCurrentMonster(null); // Ativa o modo lista se não existir
+        }
+        
+        return atual; // Mantém o texto na barra de pesquisa intacto
+      });
       }
     };
 
@@ -61,8 +102,17 @@ const PokepadShell = () => {
 
   return (
     <div className="pokepad-shell">
-      <MonsterScreen />
+
+      <MonsterScreen 
+        monster={currentMonster} 
+        allMonsters={monstersData}
+        onSelectMonster={(name, obj) => {
+          setSearchText(name);
+          setCurrentMonster(obj);
+        }} />
+
       <SearchBar value={searchText} onChange={setSearchText} />
+      
       <VirtualKeyboard onKeyPress={handleKeyPress} activeKey={activeKey} />
     </div>
   );

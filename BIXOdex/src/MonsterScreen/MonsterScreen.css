@@ -12,9 +12,9 @@
   gap: 24px;
   height: 320px; /* Mantém a altura que definimos no placeholder */
   box-sizing: border-box;
-
-  /* Sombra interna para dar efeito de ecrã afundado */
-  box-shadow: inset 0 0 30px rgba(0, 230, 77, 0.15), 0 0 10px rgba(0, 230, 77, 0.2);
+  width: 100%;
+  min-width: 100%;
+  flex-shrink: 0;
 }
 
 /* Área da imagem (quadrado preto) */
@@ -62,4 +62,81 @@
 
 .stats-bottom .monster-stat {
   font-size: 14px;
+}
+
+.monster-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  image-rendering: crisp-edges;   /* Funciona no Safari e browsers antigos */
+  image-rendering: pixelated;     /* Funciona no Chrome, Edge e Firefox modernos */
+}
+
+/* 🌟 ALTERAÇÃO AQUI: NOVOS ESTILOS PARA A LISTA DE SUGESTÕES
+   Adicione estes blocos no final do arquivo para estilizar a tela de erro/sugestão.
+*/
+
+/* Altera o layout para vertical quando exibe a lista */
+.monster-screen.column-layout {
+  flex-direction: column;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: stretch; 
+}
+
+.screen-error-title {
+  color: #ff3333; /* Vermelho de erro para contrastar com o verde */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  margin: 0;
+  text-shadow: 0 0 5px rgba(255, 51, 51, 0.6);
+  letter-spacing: 1px;
+}
+
+.screen-error-subtitle {
+  color: #00e64d;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  margin: 0 0 10px 0;
+}
+
+/* Contentor que segura os botões e permite scroll se a lista crescer */
+.monsters-suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 5px;
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+/* Cada linha de monstro clicável na lista */
+.suggestion-item-btn {
+  background: transparent;
+  border: 1px solid rgba(0, 230, 77, 0.3);
+  border-radius: 6px;
+  color: #00e64d;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  text-align: left;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+/* Efeito quando passa o rato por cima do item da lista */
+.suggestion-item-btn:hover {
+  background-color: rgba(0, 230, 77, 0.1);
+  border-color: #00e64d;
+  text-shadow: 0 0 4px rgba(0, 230, 77, 0.8);
+}
+
+/* Efeito ao clicar */
+.suggestion-item-btn:active {
+  background-color: rgba(0, 230, 77, 0.25);
 }
