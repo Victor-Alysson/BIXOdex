@@ -59,6 +59,10 @@
   flex: 2; /* Ocupam 2 "fatias", ficando mais largos */
   color: white; /* O texto destes botões é branco no seu design */
 }
+.bottom-row .key-btn.space-bar {
+  flex: 3;
+  background-color: #6d829e; /* Mantém a cor azul das outras teclas */
+}
 
 /* Cores específicas dos botões de ação */
 .btn-backspace {
@@ -75,4 +79,10 @@
 .btn-search {
   background-color: #00c74b;
   box-shadow: 0 4px 0 #008f36;
+}
+
+.key-btn.active-physical {
+  transform: translateY(4px) !important;
+  box-shadow: 0 0 0 #4a5c73 !important;
+  filter: brightness(1.2); /* Dá um pequeno brilho extra para destacar visualmente */
 }
